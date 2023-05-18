@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage[margin=1.5in]{geometry} % Adjust margins as needed
+\usepackage{graphicx}
+
+\title{Software Report}
+\author{Vevek Manda}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+The provided code represents a simple music player application developed using the Pygame library in Python. The application allows users to select a folder containing music files, create a playlist from the files, and control music playback, including features like play/pause, next song, shuffle, and quit.
+
+\section{Functionality}
+The code consists of several functions that perform specific tasks:
+
+\begin{itemize}
+  \item \texttt{choose\_music\_folder()}: Opens a file dialog box for the user to select a folder containing music files and returns the selected folder path.
+
+  \item \texttt{get\_music\_files(folder\_path)}: Retrieves all the music files (specifically, files with the ".mp3" extension) from the provided folder path and returns a list of file paths.
+
+  \item \texttt{play\_next\_song()}: Plays the next song in the playlist. It updates the current song index, loads the corresponding song file, and plays it using the Pygame mixer module.
+
+  \item \texttt{shuffle\_playlist()}: Shuffles the order of songs in the playlist. It creates a shuffled copy of the original playlist, resets the current song index, loads the first song from the shuffled playlist, and plays it.
+
+  \item \texttt{update\_current\_song\_label()}: Updates the current song label in the GUI window to display the name of the currently playing song.
+
+  \item \texttt{play\_pause()}: Toggles between play and pause states of the music player. It unpauses the playback if paused, and vice versa. It also updates the label of the play/pause button accordingly.
+
+  \item \texttt{next\_song()}: Invokes the \texttt{play\_next\_song()} function and updates the current song label.
+
+  \item \texttt{shuffle\_songs()}: Invokes the \texttt{shuffle\_playlist()} function and updates the current song label.
+
+  \item \texttt{quit\_music\_player()}: Stops the music playback and closes the application window.
+\end{itemize}
+
+\section{Graphical User Interface (GUI)}
+The code uses the Tkinter library to create a GUI window for the music player. The window is titled "Song Playlist" and has dimensions of 400x200 pixels. It contains the following GUI elements:
+
+\begin{itemize}
+  \item \texttt{current\_song\_label}: A label that displays the name of the current song being played.
+
+  \item \texttt{play\_pause\_button}: A button that allows the user to play or pause the music playback.
+
+  \item \texttt{next\_song\_button}: A button that skips to the next song in the playlist.
+
+  \item \texttt{shuffle\_button}: A button that shuffles the order of songs in the playlist.
+
+  \item \texttt{quit\_button}: A button that stops the music playback and closes the application.
+\end{itemize}
+
+\section{Initialization and Execution}
+The code initializes the Pygame library and prompts the user to select a folder containing music files. It then retrieves the music files from the selected folder and shuffles the playlist. The GUI window is created, and the initial current song label is updated. The Pygame mixer module is initialized, and the first song from the shuffled playlist is loaded and played. Finally, the code enters the main loop of the GUI window, allowing the user to interact with the music player until they choose to quit.
+
+\section{Conclusion}
+The provided code demonstrates a basic music player application with essential playback functionalities. Users can select a folder of music files, control playback, skip songs, shuffle the playlist, and quit the application. This code can serve as a starting point for further enhancements, such as adding additional features, improving the user interface, or integrating with online music services.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{fig.png}
+    \caption{GUI window}
+    \label{fig:my_label}
+\end{figure}
+
+\end{document}
+
+
